@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAPOD } from "../../service/nasaApi";
 
-
-export default function Home() {
+function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -16,12 +15,19 @@ export default function Home() {
       <h1 className="text-2xl font-bold mb-4">{data.title}</h1>
 
       {data.media_type === "image" ? (
-        <img src={data.url} alt={data.title} className="rounded-xl" />
+        <div
+          className="bg-fixed bg-cover bg-center h-screen w-full"
+          style={{ backgroundImage: `url(${data.url})` }}
+        >
+          <p className="inline-block align-baseline">{data.explanation}</p>
+        </div>
       ) : (
+        //<img src={data.url} alt={data.title} className="aspect-auto object-cover" />
         <iframe src={data.url} title="video" />
       )}
 
-      <p className="mt-4">{data.explanation}</p>
+      
     </div>
   );
 }
+export default Home;

@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "id": 654959,
+      "title": "Pasta With Tuna",
+      "image": "https://img.spoonacular.com/recipes/654959-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 648279,
+      "title": "Italian Tuna Pasta",
+      "image": "https://img.spoonacular.com/recipes/648279-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 655806,
+      "title": "Pesto & Yogurt Pasta",
+      "image": "https://img.spoonacular.com/recipes/655806-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 716429,
+      "title": "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs",
+      "image": "https://img.spoonacular.com/recipes/716429-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 654902,
+      "title": "Pasta with Butternut Squash, Sausage and Sage Pesto",
+      "image": "https://img.spoonacular.com/recipes/654902-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 654911,
+      "title": "Pasta With Cream Sauce and Mushrooms",
+      "image": "https://img.spoonacular.com/recipes/654911-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 654897,
+      "title": "Pasta With Butternut Parmesan Sauce @ Dw Magazine.Com",
+      "image": "https://img.spoonacular.com/recipes/654897-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 637325,
+      "title": "Cavatappi pasta with salmon crab surimi",
+      "image": "https://img.spoonacular.com/recipes/637325-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 1096282,
+      "title": "Rustic Pasta with Chunky Vegetables",
+      "image": "https://img.spoonacular.com/recipes/1096282-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 639957,
+      "title": "Colorful Tomato and Spinach Seafood Pasta",
+      "image": "https://img.spoonacular.com/recipes/639957-312x231.jpg",
+      "imageType": "jpg"
+    }
+  ],
+  "offset": 0,
+  "number": 10,
+  "totalResults": 285
+}

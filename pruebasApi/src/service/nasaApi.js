@@ -1,4 +1,4 @@
-const API_KEY = "gk4ohcij6jmsL5OKEeVJDGPbqjCYCxD0eryEXCNa";
+const API_KEY = "";
 const BASE_URL = "https://api.nasa.gov";
 
 export const getAPOD = async () => {

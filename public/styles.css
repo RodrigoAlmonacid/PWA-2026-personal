@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(209, 205, 209);
+    margin-left: 15dvh;
+    margin-right: 15dvh;
+    margin-top: 15dvh;
+    display: flex;
+    justify-content: center;
+
+}
+
+main {
+    justify-content: space-between;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+}
+
+a:active {
+    color: greenyellow
+}
+
+p {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}

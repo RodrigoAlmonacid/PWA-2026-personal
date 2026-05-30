@@ -47,18 +47,18 @@ const listener = (req, res) => {
                     res.end(JSON.stringify(personaje));
                 }
                 else {
-                    res.writeHead(404, { 'Content-Type': 'text/plain' });
-                    res.end('Personaje no encontrado');
+                    res.writeHead(404, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: "Personaje no encontrado" }));
                 }
             }
             else {
-                res.writeHead(400, { 'Content-Type': 'text/plain' });
-                res.end('El id ingresado no corresponde');
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: "El id ingresado no corresponde" }));
             }
         }
         else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Ruta no encontrada');
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Ruta no encontrada" }));
         }
 
     }
@@ -75,17 +75,23 @@ const listener = (req, res) => {
                     const id = (characters.length + 1).toString();
                     const newPersonaje = JSON.parse(body);
                     newPersonaje.id = id;
-                    characters.push(newPersonaje);
-                    res.writeHead(201, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify(newPersonaje));
+                    if (newPersonaje?.name && newPersonaje?.race && newPersonaje?.role && typeof newPersonaje?.level === 'number' && newPersonaje?.universe) {
+                        characters.push(newPersonaje);
+                        res.writeHead(201, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify(newPersonaje));
+                    }
+                    else {
+                        res.writeHead(400, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: "Faltan campos obligatorios" }));
+                    }
                 } catch (error) {
-                    res.writeHead(400, { 'Content-Type': 'text/plain' });
-                    res.end('JSON inválido');
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: "JSON inválido" }));
                 }
             });
         } else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Ruta POST no encontrada');
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Ruta POST no encontrada" }));
         }
     }
     else if (req.method === 'DELETE') {
@@ -100,18 +106,18 @@ const listener = (req, res) => {
                     res.end(JSON.stringify(characters));
                 }
                 else {
-                    res.writeHead(404, { 'Content-Type': 'text/plain' });
-                    res.end('Personaje no encontrado');
+                    res.writeHead(404, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: "Personaje no encontrado" }));
                 }
             }
             else {
-                res.writeHead(400, { 'Content-Type': 'text/plain' });
-                res.end('El id ingresado no corresponde');
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: "El id ingresado no corresponde" }));
             }
         }
         else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Ruta no encontrada');
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Ruta no encontrada" }));
         }
     }
     else if (req.method === 'PUT') {
@@ -132,29 +138,29 @@ const listener = (req, res) => {
                             res.writeHead(200, { 'Content-Type': 'application/json' });
                             res.end(JSON.stringify(personaje));
                         } catch (error) {
-                            res.writeHead(400, { 'Content-Type': 'text/plain' });
-                            res.end('No es posible actualizar el personaje');
+                            res.writeHead(400, { 'Content-Type': 'application/json' });
+                            res.end(JSON.stringify({ error: "No es posible actualizar el personaje" }));
                         }
                     })
                 }
                 else {
-                    res.writeHead(404, { 'Content-Type': 'text/plain' });
-                    res.end('Personaje no encontrado');
+                    res.writeHead(404, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: "Personaje no encontrado" }));
                 }
             }
             else {
-                res.writeHead(400, { 'Content-Type': 'text/plain' });
-                res.end('El id ingresado no corresponde');
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: "El id ingresado no corresponde" }));
             }
         }
         else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Ruta no encontrada');
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Ruta no encontrada" }));
         }
     }
     else {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('Error interno en el servidor al realizar la consulta');
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: "Error interno en el servidor al realizar la consulta" }));
     }
 }
 
